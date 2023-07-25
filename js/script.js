@@ -13,7 +13,7 @@ const bodyInput = document.querySelector("#body");
 
 // Load post
 const urlSearchParams = new URLSearchParams(window.location.search);
-const postId = urlSearchParams.get("title");
+const postId = urlSearchParams.get("id");
 
 // Get all posts
 async function getAllPosts() {
@@ -113,6 +113,12 @@ if (!postId) {
       email: emailInput.value,
       body: bodyInput.value,
     };
+
+    comment = JSON.stringify(comment);
+
+    postComment(comment);
+  });
+}
 
     comment = JSON.stringify(comment);
 
